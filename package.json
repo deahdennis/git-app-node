@@ -2,7 +2,7 @@
   "name": "delivery-node",
   "version": "1.0.0",
   "description": "Ejemplo delivery node",
-  "author": "jfarfan",
+  "author": "dennisapaza",
   "license": "MIT",
   "main": "app.js",
   "repository": {
