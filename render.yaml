@@ -20,7 +20,7 @@ services:
       mountPath: /data/node/app
   - type: web
     name: mongodb
-    runtime: docker
+    
     image: 
       url:  mongo:4.1.8-xenial
     envVars:
