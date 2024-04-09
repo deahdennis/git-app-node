@@ -2,7 +2,8 @@ services:
   - type: web
     name: nodejs
     runtime: docker
-    repo: https://github.com/deahdennis/git-app-node.git
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
     envVars:
       - key: MONGO_USERNAME
         value: dennisdeah
@@ -17,12 +18,16 @@ services:
     disk:
       name: data
       mountPath: /data/node/app
-
-  - name: mongodb
+  - type: web
+    name: mongodb
+    runtime: docker
     image: 
-      url:  mongo:4.4
+      url:  mongo:4.1.8-xenial
     envVars:
       - key: MONGO_INITDB_ROOT_USERNAME
-        value: tecsup
+        value: dennisdeah
       - key: MONGO_INITDB_ROOT_PASSWORD
         value: 12345678
+    disk:
+      name: data
+      mountPath: /data/node/db
