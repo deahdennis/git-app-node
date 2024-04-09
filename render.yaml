@@ -1,6 +1,7 @@
 services:
   - type: web
     name: nodejs
+    runtime: docker
     dockerfilePath: ./Dockerfile
     dockerContext: .
     envVars:
