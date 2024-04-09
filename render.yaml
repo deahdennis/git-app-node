@@ -15,7 +15,6 @@ services:
         value: 27017
       - key: MONGO_DB
         value: deliverydb
-    startCommand: ./wait-for.sh mongodb:27017 -- /home/node/app/node_modules/.bin/nodemon app.js
     disk:
       name: data
       mountPath: /data/node/app
