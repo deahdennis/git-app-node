@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: nodejs
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    envVars:
+      - key: MONGO_USERNAME
+        value: dennisdeah
+      - key: MONGO_PASSWORD
+        value: 12345678 
+      - key: MONGO_HOSTNAME
+        value: db 
+      - key: MONGO_PORT
+        value: 27017
+      - key: MONGO_DB
+        value: deliverydb
+    startCommand: ./wait-for.sh mongodb:27017 -- /home/node/app/node_modules/.bin/nodemon app.js
+    disk:
+      name: data
+      mountPath: /data/node/app
+  - type: web
+    name: mongodb
+    image: mongo:4.4
+    envVars:
+      - key: MONGO_INITDB_ROOT_USERNAME
+        value: dennisdeah
+      - key: MONGO_INITDB_ROOT_PASSWORD
+        value: 12345678
+    disk:
+      name: data
+      mountPath: /data/node/db
