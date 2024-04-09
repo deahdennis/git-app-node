@@ -2,8 +2,6 @@ services:
   - type: web
     name: nodejs
     runtime: docker
-    dockerfilePath: ./Dockerfile
-    dockerContext: .
     envVars:
       - key: MONGO_USERNAME
         value: dennisdeah
