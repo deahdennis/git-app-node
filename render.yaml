@@ -20,7 +20,8 @@ services:
       mountPath: /data/node/app
   - type: web
     name: mongodb
-    image: mongo:4.1.8-xenial
+    image: 
+      url:  mongo:4.1.8-xenial
     envVars:
       - key: MONGO_INITDB_ROOT_USERNAME
         value: dennisdeah
