@@ -18,7 +18,8 @@ services:
       name: data
       mountPath: /data/node/app
 
-  - name: mongodb
+  - type: web
+    name: mongodb
     image: 
       url:  mongo:4.4
     envVars:
